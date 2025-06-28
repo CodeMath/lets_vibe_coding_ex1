@@ -26,3 +26,13 @@
   - `GET /breadcrumbs/{conversation_id}` : 특정 대화의 히스토리 조회
 - 초기 단계에서는 간단한 파일 혹은 인메모리 저장소를 사용하고, 추후 데이터베이스 연동을 검토
 
+
+## Getting Started
+
+### Backend
+1. Install dependencies: `pip install -r backend/requirements.txt`
+2. Run the server: `./backend/run.sh`
+
+### Frontend
+1. Install Node dependencies: `npm install` inside `frontend`
+2. Start development server: `npm start`
