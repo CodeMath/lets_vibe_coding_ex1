@@ -13,6 +13,19 @@
 
 ## 초기 기획안: FE/BE 구조
 
+```mermaid
+sequenceDiagram
+    participant FE as Frontend
+    participant API as FastAPI Backend
+    participant Memory as In-Memory Store
+    FE->>API: POST /breadcrumbs
+    API->>Memory: Save breadcrumb
+    FE->>API: GET /breadcrumbs
+    API->>Memory: Retrieve list
+    Memory-->>API: List
+    API-->>FE: JSON list
+```
+
 ### FE (프론트엔드)
 - 대화 흐름을 시각적으로 확인할 수 있는 타임라인 형태의 UI 설계
 - 사용자 입력 창과 브레드크럼 히스토리 화면을 중심으로 페이지를 구성
