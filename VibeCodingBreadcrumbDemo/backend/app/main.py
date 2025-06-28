@@ -1,5 +1,5 @@
 from fastapi import FastAPI, HTTPException
-from pydantic import BaseModel
+from pydantic import BaseModel, Field
 from typing import List, Dict
 from datetime import datetime
 
@@ -9,7 +9,7 @@ class Breadcrumb(BaseModel):
     conversation_id: str
     step: int
     content: str
-    timestamp: datetime = datetime.utcnow()
+    timestamp: datetime = Field(default_factory=datetime.utcnow)
 
 # Simple in-memory storage for demo purposes
 conversations: Dict[str, List[Breadcrumb]] = {}
